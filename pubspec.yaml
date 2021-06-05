@@ -1,11 +1,10 @@
 name: arabic_numbers
-description: A new Flutter package project.
-version: 0.0.1
-author:
-homepage:
+description: Easily convert to Arabic numerals
+version: 1.0.0
+homepage: https://github.com/fathah/arabic_numbers
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
