@@ -3,15 +3,12 @@
 Easily convert to Arabic numerals
 ## Getting Started
 
-### Create an instance of ```Arabic Numbers``` Class
-```
-ArabicNumbers arabicNumber = ArabicNumbers();
-// Or call ArabicNumbers().convert(1);
-```
 
-### Call the ```convert()``` method
+### Import and use as an extension
 ```
-arabicNumber.convert(1);
+number.toArabicNumbers()
+
+// Previously: arabicNumber.convert(1);
 // You can pass int/String value in the parameter.
 // It will return a String value.
 ```
@@ -22,8 +19,8 @@ arabicNumber.convert(1);
 import 'package:fabexdateformatter/fabexdateformatter.dart';
 
 main(){
-    ArabicNumbers arabicNumber = ArabicNumbers();
-    arabicNumber.convert(7);
+    int number = 7;
+    number.toArabicNumbers();
     //Outputs: ٧
 }
 
