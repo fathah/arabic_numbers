@@ -29,7 +29,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  final arabicNumber = ArabicNumbers();
+
   void _incrementCounter() {
     setState(() {
       _counter++;
@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
               'You have pushed the button this many times:',
             ),
             Text(
-              arabicNumber.convert(_counter),
+              _counter.toArabicNumbers,
               style: Theme.of(context).textTheme.headline4,
             ),
           ],

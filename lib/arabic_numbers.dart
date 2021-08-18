@@ -1,32 +1,58 @@
 library arabic_numbers;
 
-/// A Calculator.
-class ArabicNumbers {
-  String convert(number) {
-    if (number is int) {
-      String replace1 = number.toString().replaceAll('0', '٠');
-      String replace2 = replace1.replaceAll('1', '١');
-      String replace3 = replace2.replaceAll('2', '٢');
-      String replace4 = replace3.replaceAll('3', '٣');
-      String replace5 = replace4.replaceAll('4', '٤');
-      String replace6 = replace5.replaceAll('5', '٥');
-      String replace7 = replace6.replaceAll('6', '٦');
-      String replace8 = replace7.replaceAll('7', '٧');
-      String replace9 = replace8.replaceAll('8', '٨');
-      String replace10 = replace9.replaceAll('9', '٩');
-      return replace10;
+class _ArabicNumbers {
+  static String convert(Object value) {
+    assert(
+      value is int || value is String,
+      "The value object must be of type 'int' or 'String'.",
+    );
+
+    if (value is int) {
+      return _toArabicNumbers(value.toString());
     } else {
-      String replace1 = number.replaceAll('0', '٠');
-      String replace2 = replace1.replaceAll('1', '١');
-      String replace3 = replace2.replaceAll('2', '٢');
-      String replace4 = replace3.replaceAll('3', '٣');
-      String replace5 = replace4.replaceAll('4', '٤');
-      String replace6 = replace5.replaceAll('5', '٥');
-      String replace7 = replace6.replaceAll('6', '٦');
-      String replace8 = replace7.replaceAll('7', '٧');
-      String replace9 = replace8.replaceAll('8', '٨');
-      String replace10 = replace9.replaceAll('9', '٩');
-      return replace10;
+      return _toArabicNumbers(value as String);
     }
+  }
+
+  static String _toArabicNumbers(String value) {
+    return value
+        .replaceAll('0', '٠')
+        .replaceAll('1', '١')
+        .replaceAll('2', '٢')
+        .replaceAll('3', '٣')
+        .replaceAll('4', '٤')
+        .replaceAll('5', '٥')
+        .replaceAll('6', '٦')
+        .replaceAll('7', '٧')
+        .replaceAll('8', '٨')
+        .replaceAll('9', '٩');
+  }
+}
+
+extension IntExtensions on int {
+  /// Converts English numbers to the Arabic numbers format
+  ///
+  ///
+  /// Example:
+  /// ```dart
+  /// final arabicNumbers = 0123456789.toArabicNumbers;
+  /// // result: ٠١٢٣٤٥٦٧٨٩
+  /// ```
+  String get toArabicNumbers {
+    return _ArabicNumbers.convert(this);
+  }
+}
+
+extension StringExtensions on String {
+  /// Converts English numbers to the Arabic numbers format
+  ///
+  ///
+  /// Example:
+  /// ```dart
+  /// final arabicNumbers = '0123456789'.toArabicNumbers;
+  /// // result: ٠١٢٣٤٥٦٧٨٩
+  /// ```
+  String get toArabicNumbers {
+    return _ArabicNumbers.convert(this);
   }
 }
